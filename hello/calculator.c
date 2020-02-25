@@ -12,7 +12,7 @@
 
 int operation;
 double result = 0 ;
-double x,y;
+double x, y;
 
 double sum(void);
 double sub(void);
@@ -27,45 +27,47 @@ int main(void)
 
     do
     {
-        if(flag == 'y' || flag == 'Y')
+        if (flag == 'y' || flag == 'Y')
         {
             printf("\e[2J\e[H");
             calc();
             flag = get_char("Again? (Y/N): ");
         }
-        else if(flag == 'n' || flag == 'N')
+        else if (flag == 'n' || flag == 'N')
         {
             exit(0);
         }
-    } while (flag != 'y' || flag != 'Y' || flag != 'n' || flag != 'N');
+
+    }
+    while (flag != 'y' || flag != 'Y' || flag != 'n' || flag != 'N');
 }
 
 double sum(void)
 {
     x = get_double("Enter first num : ");
     y = get_double("Enter second num: ");
-    return x+y;
+    return x + y;
 }
 
 double mul(void)
 {
     x = get_double("Enter first num : ");
     y = get_double("Enter second num: ");
-    return x*y;
+    return x * y;
 }
 
 double sub(void)
 {
     x = get_double("Enter first num : ");
     y = get_double("Enter second num: ");
-    return x-y;
+    return x - y;
 }
 
 double divv(void)
 {
     x = get_double("Enter first num : ");
     y = get_double("Enter second num: ");
-    return x/y;
+    return x / y;
 }
 
 
@@ -78,38 +80,42 @@ void calc(void)
     {
         printf("###   Sum.   ###\n\n");
         result = sum();
-        printf("\n\nResult = %.1lf\n\n",result);
+        printf("\n\nResult = %.1lf\n\n", result);
         sleep(1);
 
-    } else if (operation == 2)
+    }
+    else if (operation == 2)
     {
         printf("###   Sub.   ###\n");
         result = sub();
-        printf("\n\nResult = %.1lf\n\n",result);
+        printf("\n\nResult = %.1lf\n\n", result);
         sleep(1);
 
-    } else if (operation == 3)
+    }
+    else if (operation == 3)
     {
         printf("###   Mul.   ###\n");
         result = mul();
-        printf("\n\nResult = %.1lf\n\n",result);
+        printf("\n\nResult = %.1lf\n\n", result);
         sleep(1);
 
-    } else if (operation == 4)
+    }
+    else if (operation == 4)
     {
         printf("###   Div.   ###\n");
         result = divv();
-        printf("\n\nResult = %.1lf\n\n",result);
+        printf("\n\nResult = %.1lf\n\n", result);
         sleep(1);
 
-    } else
+    }
+    else
     {
         printf("###   ERROR   ###\n");
-        printf("Please try again after loading  ");
+        printf("Please try again after loading. ");
         sleep(1);
-        for(int i=0; i<100; i+=25)
+        for (int i = 0; i < 100; i += 25)
         {
-            printf("%i%%",i);
+            printf("%i%%", i);
             sleep(1);
             printf(" .");
             sleep(1);
@@ -124,5 +130,13 @@ void calc(void)
         printf("\n");
         printf("\e[2J\e[H");
         calc();
+
+        // for(int i=0; i<10; i++)
+        // {
+        //     printf(".");
+        //     sleep(1);
+        // }
+        // printf("\e[2J\e[H");
+
     }
 }
